@@ -40,6 +40,7 @@
     "ember-cli-app-version": "^6.0.1",
     "ember-cli-babel": "^8.2.0",
     "ember-cli-clean-css": "^3.0.0",
+    "ember-cli-cors": "^0.0.2",
     "ember-cli-dependency-checker": "^3.3.2",
     "ember-cli-htmlbars": "^6.3.0",
     "ember-cli-inject-live-reload": "^2.1.0",
@@ -76,5 +77,9 @@
   },
   "ember": {
     "edition": "octane"
+  }, 
+  "dependencies": {
+    "jwt-decode": "^3.0.0",
+    "lodash": "^4.17.21"
   }
 }

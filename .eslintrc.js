@@ -13,7 +13,7 @@ module.exports = {
       ],
     },
   },
-  plugins: ['ember'],
+  plugins: [''],
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended',

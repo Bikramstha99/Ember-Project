@@ -1,0 +1,80 @@
+  <style>
+    .background{
+      background-color: azure;
+    }
+    .Greet{
+      text-align: end;
+      margin-right: 20px;
+      font-size: 20px;
+    }
+    .movie {
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+    .movie-card {
+        max-width: 350px;
+        margin: 30px;
+        transition: transform 0.3s; 
+
+    }
+     .movie-card:hover {
+        transform: scale(1.05); 
+    }
+    .add-search{
+      display: flex;
+      
+    }
+   .add{
+   justify-content: end;
+   margin-left:20px
+   }
+
+   .search{
+     display: flex;
+     align-items: center;
+     margin-left: 20rem;
+   }
+   .detials{
+   justify-content: space-between;
+   }
+   .name{
+    text-align: center;
+    font-size: 25px
+   }
+  </style>
+  <NavBar @model={{this.name}}/>
+  <div class="background">
+     <div class="add-search">
+   <div class="add">
+  {{#if this.isAdmin }}
+  <LinkTo @route="add" class="btn btn-primary">Add Movie</LinkTo>
+{{/if}}
+</div>
+  <div class="search mt-3">
+  <input class="form-control me-2" style="width: 300px; height:40px;" type="text" placeholder="Enter movie name" {{on "input" this.searchMovies}}/>
+  <i class="gg-search"></i>
+</div>
+
+    </div>
+  <section class="movie">
+   {{#each this.filteredMovies as |rental|}}
+   <div class="details"> 
+    <div class="movie-card " >
+      {{!-- <img class="card-img-top" src="https://localhost:7077/{{rental.photoPath}}" alt="Movie Poster"> --}}
+       <img class="card-img-top" src="data:image;base64,{{rental.photoPath}}"  alt="Movie Poster">
+      <div class="name">
+        <strong>{{rental.name}}</strong>
+      </div>  
+        {{#if this.isAdmin }}
+         <LinkTo @route="edit" @model={{rental}} class="btn btn-primary">Edit Movie</LinkTo>
+         <button {{on "click" (fn this.deleteMovie rental.id)}} class="btn btn-danger">Delete Movie</button>
+        {{/if}}
+       <LinkTo @route="detail" @model={{rental}} class="btn btn-primary">Movie Detail</LinkTo>   
+    </div>
+  </div>
+  
+  {{/each}}
+  </section>
+  </div>
+

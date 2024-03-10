@@ -1,0 +1,31 @@
+<style>
+  .greet{
+    margin-left: 5rem;
+  }
+</style>
+<nav class="navbar navbar-expand-md bg-light">
+  <div class="container-fluid">
+    <div class="logo">
+    <img src="logo.jpg" width="70px" style="border-radius: 50%;"alt="logo">
+    <a class="navbar-brand" >MovieBlock</a>
+    </div>
+    <ul class="navbar-nav  mb-2">
+      <li class="nav-item">
+        <a class="nav-link active" href="#"><strong><span style="font-size: 20px;"><LinkTo @route="list" class="button">Home</LinkTo></span></strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#"><strong><span style="font-size: 20px;"> <LinkTo @route="contact" class="button">Contact</LinkTo></span></strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#"><strong><span style="font-size: 20px;"><LinkTo @route="about" class="button">About Us</LinkTo></span></strong></a>
+      </li>
+    </ul>
+     <div class="greet">
+     <strong><span style="font-size: 25px;">Welcome, {{@model}}</span></strong>
+     </div>
+    <div class=" mb-2">
+    <button type="button" class="btn btn-danger" {{on 'click' this.logout}} >Logout</button>
+    </div>
+       
+  </div>
+</nav>

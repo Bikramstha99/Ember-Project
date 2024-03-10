@@ -1,0 +1,50 @@
+<NavBard />
+<div class=" mt-2" style="background-color: #f0f0f0;"> 
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card" style="height: 650px;">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4"><strong>Add Movie</strong></h2>
+          <form {{on "submit" this.addMovie}} class="mb-3 ms-4 ">
+            <div class="mb-2">
+              <label for="name">Name:</label>
+              <Input type="text" id="name" @value={{this.name}} class="form-control mb-3" placeholder="Name"/> 
+            </div>
+             <div class="mb-2">
+              <label for="director">Director:</label>
+              <Input type="text" id="director" @value={{this.director}} class="form-control mb-3" placeholder="Director"/> 
+            </div>
+              <div class="mb-2">
+              <label for="genre">Genre:</label>
+              <Input type="text" id="genre" @value={{this.genre}} class="form-control mb-3" placeholder="Genre"/> 
+            </div>
+             <div class="mb-2">
+              <label for="Cast">Cast:</label>
+              <Input type="text" id="genre" @value={{this.cast}} class="form-control mb-3" placeholder="Cast"/> 
+            </div>
+             <div class="mb-2">
+              <label for="Description">Description:</label>
+              <Input type="text" id="genre" @value={{this.description}} class="form-control mb-3" placeholder="Description"/> 
+            </div>
+             <div class="mb-4">
+            <label for="releasedDate">ReleasedDate:</label>
+               {{input type="date" id="releasedDate" value=this.releasedDate}}
+            </div>
+            <div class="mb-4">
+              <label for="image">Upload Image:</label>
+               <input type="file" id="image" {{on "change" this.fileSelected}}>
+            </div>
+             <div class="d-grid gap-2 ">
+            <button type="submit" class="btn btn-primary"><strong>Add</strong></button>
+            </div>
+       
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+     

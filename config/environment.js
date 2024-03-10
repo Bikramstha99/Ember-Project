@@ -5,7 +5,8 @@ module.exports = function (environment) {
     modulePrefix: 'movie-ember',
     environment,
     rootURL: '/',
-    locationType: 'history',
+    
+    locationType: 'hash',
     EmberENV: {
       EXTEND_PROTOTYPES: false,
       FEATURES: {
@@ -13,14 +14,18 @@ module.exports = function (environment) {
         // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
       },
     },
-
+    // contentSecurityPolicy: {
+    //   'connect-src': "'self' http://localhost:4200 https://localhost:7077",
+    // },
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+     
     },
+    // apiUrl:'https://localhost:77',
   };
 
   if (environment === 'development') {
+    ENV.apiUrl='https://localhost:7077';
+    ENV.locationType = 'hash';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -29,8 +34,9 @@ module.exports = function (environment) {
   }
 
   if (environment === 'test') {
+    ENV.apiUrl='https://localhost:7077'; 
     // Testem prefers this...
-    ENV.locationType = 'none';
+    ENV.locationType = 'hash';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
@@ -41,6 +47,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.apiUrl='https://localhost:44334';
+    ENV.locationType = 'hash';
     // here you can enable a production-specific feature
   }
 

@@ -4,8 +4,18 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
-    // Add options here
+    autoImport: {
+      webpack: {
+        output: {
+          filename: 'chunk.[id].js'
+        },
+        optimization: {
+          realContentHash: true
+        }
+      }
+    }
+    
   });
-
   return app.toTree();
+  
 };

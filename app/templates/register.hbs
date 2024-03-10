@@ -1,0 +1,52 @@
+<div class="mt-4 container-fluid" style="background-color: #f0f0f0;">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4"><strong>SignUp</strong></h2>
+          <form {{on "submit" this.register}} class="mb-3 ms-4">
+            <div class="mb-2">
+              <Input type="text" id="firstName" @value={{this.firstName}} class="form-control mb-3" placeholder="FirstName"/> 
+            </div>
+            <div class="mb-2"> 
+              <Input type="text" id="lastName" @value={{this.lastName}} class="form-control mb-3" placeholder="LastName"/> 
+            </div>
+            <div class="mb-2">
+               <Input type="text" id="userName" @value={{this.userName}} class="form-control mb-3" placeholder="UserName"/> 
+            </div>
+            <div class="mb-2">
+              <Input type="text" id="email" @value={{this.email}} class="form-control mb-3" placeholder="Email"/> 
+            </div>
+            <div class="mb-2">
+               <Input type="password" id="password" style="-webkit-text-security: disc" @value={{this.password}} class="form-control mb-3" placeholder="Password"/> 
+            </div>
+            <div class="mb-2">
+              <Input type="password" style="-webkit-text-security: disc" id="password" @value={{this.confirmPassword}} class="form-control mb-3" placeholder="ConfirmPassword"/> 
+            </div>
+             {{#if this.errorMessage}}
+                  <div class="alert alert-danger">
+                    {{this.errorMessage}}
+                  </div>
+            {{/if}}
+
+            {{#if this.validationErrors}}
+                    <div class="alert alert-danger">
+                      <ul>
+                          {{#each this.validationErrors as |error|}}
+                              <li>{{error}}</li>
+                          {{/each}}
+                      </ul>
+                    </div>
+            {{/if}}
+            <div class=" d-grid gap-2 ">
+              <button type="submit" class="btn btn-primary"><strong>SignUp</strong></button>
+            </div>
+            <div class="mt-3 ">
+              <p>Already have an account?<LinkTo @route="login" class="btn btn-link mb-2"><strong>Login</strong></LinkTo></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

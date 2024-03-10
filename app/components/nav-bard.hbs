@@ -1,0 +1,27 @@
+<style>
+  .greet{
+    margin-left: 5rem;
+  }
+</style>
+<nav class="navbar navbar-expand-md "style="background-color: black;">
+  <div class="container-fluid">
+    <div class="logo">  
+    <a class="navbar-brand" style="color: aliceblue;" >MovieBlock</a>
+    </div>
+    <ul class="navbar-nav  mb-2">
+      <li class="nav-item">
+        <a class="nav-link active" href="#"><strong><span style="font-size: 20px;color:aliceblue">Home</span></strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#"><strong><span style="font-size: 20px;color:aliceblue">Contact</span></strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#"><strong><span style="font-size: 20px;color:aliceblue">About Us</span></strong></a>
+      </li>
+    </ul>
+    <div class=" mb-2">
+    <button type="button" class="btn btn-danger" {{on 'click' this.logout}} >Logout</button>
+    </div>
+       
+  </div>
+</nav>
